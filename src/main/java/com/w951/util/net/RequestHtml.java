@@ -34,6 +34,20 @@ public class RequestHtml {
 		return sb.toString();
 	}
 	
+	public static String postHtmlByCookie(String strUrl, String cookie) throws Exception {
+		URL url = new URL(strUrl);
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestProperty("cookie", cookie);
+		
+		StringBuffer sb = new StringBuffer();
+		Parser parser = new Parser(connection);
+		for (NodeIterator i = parser.elements(); i.hasMoreNodes();) {
+			Node node = i.nextNode();
+			sb.append(node.toHtml());
+		}
+		return sb.toString();
+	}
+	
 	/**
 	 * POST请求获取HTML
 	 * 自定义编码
