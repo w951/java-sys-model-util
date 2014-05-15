@@ -179,7 +179,7 @@
 			<version>2.1</version>
 		</dependency>
 
-		<!-- Shiro -->
+		<!-- SHIRO -->
 
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -225,12 +225,35 @@
 			<version>0.0.9</version>
 		</dependency>
 
-		<!-- freemarker -->
+		<!-- FREEMARKER -->
 
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>2.3.20</version>
+		</dependency>
+		
+		<!-- CKEDITOR -->
+		
+		<dependency>
+			<groupId>com.ckeditor</groupId>
+			<artifactId>ckeditor-java-core</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-vfs</artifactId>
+			<version>3.1.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>0.4.5</version>
 		</dependency>
 
 		<!-- 内置JAR -->
@@ -241,6 +264,35 @@
 			<version>1.0</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/QRCode.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.ckfinder</groupId>
+			<artifactId>CKFinder</artifactId>
+			<version>2.4.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/CKFinder-2.4.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.ckfinder</groupId>
+			<artifactId>CKFinderPlugin-FileEditor</artifactId>
+			<version>2.4.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/CKFinderPlugin-FileEditor-2.4.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.ckfinder</groupId>
+			<artifactId>CKFinderPlugin-ImageResize</artifactId>
+			<version>2.4.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/CKFinderPlugin-ImageResize-2.4.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.ckfinder</groupId>
+			<artifactId>CKFinderPlugin-Watermark</artifactId>
+			<version>2.4.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/CKFinderPlugin-Watermark-2.4.1.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<build>

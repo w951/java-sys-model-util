@@ -29,7 +29,17 @@ public class PermissionInterceptor extends AbstractInterceptor {
 		String requestURI = request.getRequestURI();
 		
 		Cookie cookie = CookieUtil.getCookieByName(request, "loginInfo");
+		if (cookie == null) {
+			response.getWriter().print("<script>alert('用户认证失效，请重新登录');</script>");
+			return null;
+		}
 		String[] loginInfo = cookie.getValue().split(",");
+		
+		// 重新保存至cookie
+		String cookieName = "loginInfo";
+		String cookieValue = loginInfo[0] + "," + loginInfo[1];
+		int cookieMaxAge = 60 * 30; // 保存30分钟
+		CookieUtil.addCookie(response, cookieName, cookieValue, cookieMaxAge);
 		
 		Properties properties = PropertiesLoaderUtils.loadAllProperties("system.properties");
 		String permissionUrl = properties.get("system.permissionUrl").toString();
