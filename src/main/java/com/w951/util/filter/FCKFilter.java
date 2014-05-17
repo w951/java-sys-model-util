@@ -15,6 +15,15 @@ public class FCKFilter extends StrutsPrepareAndExecuteFilter {
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		String URI = request.getRequestURI();
+		
+		// 解决CKFinder浏览器路径兼容
+		
+		if (URI.indexOf("ckfinder") != -1) {
+			URI = URI.substring(URI.indexOf("/ckfinder"));
+			request.getRequestDispatcher(URI).forward(req, res);
+			return;
+		}
+		
 		String[] uriArray = URI.split("/ckfinder/core/connector/java/*/");
 		int arrayLen = uriArray.length;
 		if (arrayLen >= 2) {
